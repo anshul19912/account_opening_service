@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Pattern;
+import java.time.LocalDate;
 
 @Entity
 public class Account {
@@ -27,6 +28,12 @@ public class Account {
     private String email;
     private String current_address;
     private String permanent_address;
+    private LocalDate dateOfBirth;
+    @Pattern(
+            regexp = "^[0-9]{10}$",
+            message = "Phone number must be 10 digits"
+    )
+    private String phoneNumber;
 
 
     public int getAccount_number() {
@@ -84,6 +91,21 @@ public class Account {
     public void setPermanent_address(String permanent_address) {
         this.permanent_address = permanent_address;
     }
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     public Account(){}
 
@@ -95,6 +117,8 @@ public class Account {
         this.email = email;
         this.current_address = currentAddress;
         this.permanent_address = permanentAddress;
+        this.dateOfBirth = dateOfBirth;
+        this.phoneNumber = phoneNumber;
     }
 
 

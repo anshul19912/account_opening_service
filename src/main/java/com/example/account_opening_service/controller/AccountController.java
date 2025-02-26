@@ -30,9 +30,5 @@ public class AccountController {
         return service.deleteAccount(id);
     }
 
-    @PutMapping("/updateAccount/{email}/{id}")
-    public String updateEmail(@PathVariable String email, @PathVariable long id){
-        return service.updateEmail(email,id);
-    }
 
 }

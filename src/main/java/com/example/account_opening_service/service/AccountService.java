@@ -26,12 +26,6 @@ public class AccountService {
         return repository.findAll();
     }
 
-    public String updateEmail(String email, long id){
 
-        Account account = repository.getById(id);
-        account.setEmail(email);
-        repository.save(account);
-        return "Account Email updated";
-    }
 
 }
