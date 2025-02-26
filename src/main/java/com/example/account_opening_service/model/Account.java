@@ -12,7 +12,7 @@ public class Account {
 
     @Id
         @GeneratedValue
-        int account_number;
+        long account_number;
 
     @Pattern(regexp = "^[a-zA-Z\\s]*$", message = "Name should not contain any numbers")
    private String name;
@@ -36,7 +36,7 @@ public class Account {
     private String phoneNumber;
 
 
-    public int getAccount_number() {
+    public long getAccount_number() {
         return account_number;
     }
 
