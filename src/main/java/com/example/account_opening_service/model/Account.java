@@ -35,6 +35,7 @@ public class Account {
     )
     private String phoneNumber;
 
+    private LocalDate created_date = LocalDate.now();
 
     public long getAccount_number() {
         return account_number;
